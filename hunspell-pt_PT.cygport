@@ -1,0 +1,22 @@
+NAME="hunspell-pt_PT"
+VERSION=20160406
+RELEASE=1
+CATEGORY="Text"
+SUMMARY="Portuguese dictionary for Hunspell"
+DESCRIPTION="Hunspell is a spell checker and morphological analyzer library and
+program designed for languages with rich morphology and complex compounding or
+character encoding.
+This package provides a Portuguese dictionary for Hunspell."
+HOMEPAGE="http://pt.libreoffice.org/"
+SRC_URI="http://natura.di.uminho.pt/download/sources/Dictionaries/hunspell/hunspell-pt_PT-${VERSION}.tar.gz"
+
+ARCH=noarch
+
+src_compile() { :; }
+
+src_install() {
+	cd ${S}
+	insinto /usr/share/myspell
+	doins *.aff *.dic
+	dodoc *.txt
+}
